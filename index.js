@@ -9,9 +9,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+const path = require('path');
 app.get('/', (req, res) => {
-  res.send('JANEXA AI Backend Live 🚀');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+
 
 app.post('/api/chat', async (req, res) => {
   try {
