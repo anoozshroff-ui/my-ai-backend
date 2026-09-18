@@ -9,9 +9,11 @@ const openai = new OpenAI({
 });
 
 // होम रूट को एकदम सिंपल रखो
+const path = require('path');
 app.get('/', (req, res) => {
-  res.send('API is working');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
 
 // चैट एंडपॉइंट
 app.post('/api/chat', async (req, res) => {
