@@ -51,10 +51,7 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
+app.use(express.static(__dirname));
 
-app.listen(PORT, () => {
-  console.log(`JANEXA AI running on port ${PORT}`);
-});
 
 module.exports = app;
